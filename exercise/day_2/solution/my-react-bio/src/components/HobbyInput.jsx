@@ -17,7 +17,7 @@ function HobbyInput({ hobbies, setHobbies }) {
   };
 
   return (
-    <div className="hobby-input-section">
+    <div className="flex w-full max-w-sm items-center gap-2">
       <Input
         type="text"
         value={newHobby}
