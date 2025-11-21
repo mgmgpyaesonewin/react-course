@@ -1,16 +1,73 @@
-# React + Vite
+# My React Bio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive bio page built with React and Vite. This project demonstrates a basic React component structure, including a bio card with user details and interactive elements.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Bio Card**: Displays user information such as name, bio, and profile image.
+-   **Interactive Elements**: Includes a "Like" button and a hobby input field.
+-   **Modern Styling**: Styled with CSS for a clean and responsive look.
+-   **Vite Powered**: Fast development and build experience using Vite.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **React**: JavaScript library for building user interfaces.
+-   **Vite**: Next Generation Frontend Tooling.
+-   **CSS**: Custom styling for components.
+-   **ESLint**: Pluggable JavaScript linter.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to get a local copy up and running.
+
+### Prerequisites
+
+-   Node.js installed on your machine.
+-   npm (Node Package Manager) or yarn.
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd my-react-bio
+    ```
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+### Usage
+
+1.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+2.  Open your browser and visit `http://localhost:5173` (or the URL shown in your terminal).
+
+## Project Structure
+
+```
+my-react-bio/
+├── src/
+│   ├── components/
+│   │   ├── BioCard.jsx
+│   │   ├── HobbyInput.jsx
+│   │   └── LikeButton.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── public/
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
