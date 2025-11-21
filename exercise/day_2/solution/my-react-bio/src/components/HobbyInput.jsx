@@ -19,6 +19,7 @@ function HobbyInput({ hobbies, setHobbies }) {
   return (
     <div className="flex w-full max-w-sm items-center gap-2">
       <Input
+        className="flex-1"
         type="text"
         value={newHobby}
         onChange={handleInputChange}

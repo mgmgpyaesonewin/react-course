@@ -46,8 +46,8 @@ function BioCard({ name, bioText, imageUrl, websiteUrl }) {
                     <div className="text-left">
                         <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">My Hobbies</h3>
                         <div className="flex flex-wrap gap-2">
-                            {hobbies.map((hobby, index) => (
-                                <Item variant="outline" key={index} className="group hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 cursor-default">
+                            {hobbies.map((hobby) => (
+                                <Item variant="outline" key={hobby} className="group hover:border-blue-400 hover:bg-blue-50 transition-all duration-200 cursor-default">
                                     <ItemContent className="text-gray-600 group-hover:text-blue-600 font-medium">
                                         {hobby}
                                     </ItemContent>
