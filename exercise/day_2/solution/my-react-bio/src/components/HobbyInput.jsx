@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 function HobbyInput({ hobbies, setHobbies }) {
   const [newHobby, setNewHobby] = useState('');
@@ -17,7 +18,7 @@ function HobbyInput({ hobbies, setHobbies }) {
 
   return (
     <div className="hobby-input-section">
-      <input
+      <Input
         type="text"
         value={newHobby}
         onChange={handleInputChange}
