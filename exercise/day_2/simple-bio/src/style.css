@@ -1,112 +1,296 @@
-.App {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
-  background-color: #f0f8ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
 }
 
-.App-header {
-  margin-bottom: 30px;
-  color: #4682B4;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-primary);
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .bio-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  max-width: 600px;
-  margin: 0 auto;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+
+/* Header Section */
+.bio-header {
+  background: linear-gradient(to right, #f8fafc, #e2e8f0);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .bio-image {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
   object-fit: cover;
-  margin-bottom: 20px;
-  border: 5px solid #e0f2f7;
+  border: 4px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-h2 {
-  color: #333;
-  margin-bottom: 10px;
+.bio-image:hover {
+  transform: scale(1.05);
+}
+
+.header-content {
+  text-align: left;
+}
+
+.bio-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 5px;
+  letter-spacing: -0.025em;
+}
+
+.bio-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Body Section */
+.bio-body {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.bio-section h3,
+.skills-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #374151;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
 }
 
 .bio-text-content {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Skills Section */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: var(--radius-full);
+  width: 0;
+  /* Start at 0 for animation */
+  animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+  to {
+    width: var(--target-width);
+  }
+}
+
+/* Footer Section */
+.bio-footer {
+  padding: 30px 40px;
+  background-color: #f9fafb;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #6b7280;
+  transition: all 0.3s ease;
+  padding: 10px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  color: var(--primary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .website-link {
   display: inline-block;
-  background-color: #1E90FF;
+  background: var(--primary-color);
   color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
   text-decoration: none;
-  margin-bottom: 30px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
 }
 
 .website-link:hover {
-  background-color: #007bff;
+  background-color: #4338ca;
 }
 
 .interactive-section {
   display: flex;
-  justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.like-section,
-.hobby-input-section {
+/* Hobbies Tags */
+.hobbies-list-section {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hobbies-list-section h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+.hobbies-tags {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
+.hobby-tag {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Button & Input Styling Override */
 button {
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  background-color: #4682B4;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
   color: white;
   cursor: pointer;
-  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #5a9bd3;
+  background-color: var(--primary-color);
 }
 
 input[type="text"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.hobbies-list-section {
-  margin-top: 30px;
-  text-align: left;
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
-.hobbies-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-  color: #555;
-  display: inline-block;
-  /* To align list left within centered parent */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bio-header {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.hobbies-list li {
-  margin-bottom: 5px;
+  .header-content {
+    text-align: center;
+  }
+
+  .bio-body {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .bio-footer {
+    padding: 30px;
+  }
 }
