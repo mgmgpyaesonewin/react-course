@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from './ui/button';
 
 function LikeButton() {
   const [likeCount, setLikeCount] = useState(0);
@@ -10,7 +9,7 @@ function LikeButton() {
 
   return (
     <div className="like-section">
-      <Button onClick={handleLikeClick}>Like</Button>
+      <button onClick={handleLikeClick}>Like</button>
       <span> ({likeCount})</span>
     </div>
   );

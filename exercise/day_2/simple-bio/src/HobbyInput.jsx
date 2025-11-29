@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
 
 function HobbyInput({ hobbies, setHobbies }) {
   const [newHobby, setNewHobby] = useState('');
@@ -18,13 +16,13 @@ function HobbyInput({ hobbies, setHobbies }) {
 
   return (
     <div className="hobby-input-section">
-      <Input
+      <input
         type="text"
         value={newHobby}
         onChange={handleInputChange}
         placeholder="Add a new hobby"
       />
-      <Button onClick={handleAddHobby}>Add Hobby</Button>
+      <button onClick={handleAddHobby}>Add Hobby</button>
     </div>
   );
 }

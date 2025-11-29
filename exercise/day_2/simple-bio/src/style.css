@@ -72,6 +72,27 @@ h2 {
   gap: 10px;
 }
 
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4682B4;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #5a9bd3;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 .hobbies-list-section {
   margin-top: 30px;
   text-align: left;
